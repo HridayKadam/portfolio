@@ -20,7 +20,7 @@ body {
 main {
   max-width: 600px;
   width: 100%;
-  padding: 60px 40px;
+  padding: 48px 40px;
   background: linear-gradient(to bottom, #f5ede0 0%, #ede4d6 25%, #e8ddd0 50%, #ede4d6 75%, #f5ede0 100%);
   border-radius: 4px;
   box-shadow: 
@@ -66,8 +66,8 @@ main::after {
 
 /* Header */
 header {
-  margin-bottom: 48px;
-  padding-bottom: 24px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
   padding-top: 0;
   border-bottom: 2px solid rgba(139, 100, 70, 0.2);
   position: relative;
@@ -165,7 +165,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px 0;
+  padding: 14px 0;
   background: none;
   border: none;
   cursor: pointer;
@@ -196,7 +196,7 @@ body {
 }
 
 .section-content {
-  padding-bottom: 24px;
+  padding-bottom: 16px;
   animation: slideDown 0.3s ease;
 }
 
@@ -219,8 +219,8 @@ body {
 
 /* Articles */
 article {
-  margin-bottom: 28px;
-  padding: 18px 0;
+  margin-bottom: 20px;
+  padding: 12px 0;
   border-bottom: 1px solid rgba(139, 100, 70, 0.12);
 }
 
@@ -231,11 +231,11 @@ article:last-of-type {
 
 /* Work items in Non-Tech section */
 .work-item {
-  margin-bottom: 32px;
+  margin-bottom: 22px;
 }
 
 .work-item:last-of-type {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .work-meta {
@@ -248,7 +248,7 @@ article:last-of-type {
 h3 {
   font-size: 20px;
   font-weight: 600;
-  margin: 0 0 10px 0;
+  margin: 0 0 6px 0;
   color: #1a1815;
   line-height: 1.5;
   font-family: 'Caveat', cursive, Georgia, serif;
@@ -266,24 +266,24 @@ h3 span {
 /* Text */
 p {
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.7;
   color: #3d3b38;
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
   font-family: 'Kalam', cursive, Georgia, serif;
   font-weight: 400;
 }
 
 .design-link {
-  margin-top: 24px;
-  padding-top: 20px;
+  margin-top: 16px;
+  padding-top: 14px;
   border-top: 1px solid rgba(139, 100, 70, 0.12);
 }
 
 li {
   font-size: 17px;
-  line-height: 1.85;
+  line-height: 1.75;
   color: #3d3b38;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-family: 'Kalam', cursive, Georgia, serif;
   font-weight: 400;
 }
@@ -303,15 +303,15 @@ ul li::before {
 /* Bullet points for lists in articles */
 .work-details {
   padding-left: 0;
-  margin: 12px 0 0 0;
+  margin: 8px 0 0 0;
   list-style: none;
 }
 
 .work-details li {
   padding-left: 24px;
   position: relative;
-  margin-bottom: 10px;
-  line-height: 1.8;
+  margin-bottom: 6px;
+  line-height: 1.7;
   color: #3d3b38;
   font-family: 'Kalam', cursive, Georgia, serif;
 }
@@ -379,8 +379,8 @@ article p a:hover {
 
 /* Footer */
 footer {
-  margin-top: 48px;
-  padding-top: 24px;
+  margin-top: 32px;
+  padding-top: 16px;
   border-top: 1px solid rgba(139, 100, 70, 0.15);
   font-size: 13px;
   color: #8b7a6b;
@@ -472,12 +472,12 @@ footer {
   }
   
   header {
-    margin-bottom: 36px;
-    padding-bottom: 20px;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
   }
-  
+
   .section-header {
-    padding: 16px 0;
+    padding: 12px 0;
     font-size: 13px;
   }
   
@@ -504,12 +504,12 @@ footer {
   }
   
   article {
-    margin-bottom: 24px;
-    padding: 16px 0;
+    margin-bottom: 18px;
+    padding: 10px 0;
   }
-  
+
   .work-item {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
   }
   
   .case-letter {
@@ -568,12 +568,12 @@ footer {
   }
   
   header {
-    margin-bottom: 32px;
-    padding-bottom: 18px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
   }
-  
+
   .section-header {
-    padding: 14px 0;
+    padding: 10px 0;
     font-size: 12px;
     letter-spacing: 1px;
   }
