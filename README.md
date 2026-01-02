@@ -9,5 +9,5 @@ Simple, content-first, paper-style layout inspired by academic portfolios.
 Built with plain HTML and CSS.  
 No frameworks.
 
-Last updated dec 2025.
+Last updated Jan 2025.
 
