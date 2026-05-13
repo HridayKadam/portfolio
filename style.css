@@ -114,6 +114,12 @@ section {
   max-width: 600px;
 }
 
+.subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 500px;
+}
+
 /* Content Blocks */
 .section-label {
   font-size: 14px;
@@ -143,6 +149,24 @@ section {
 
 .prose p {
   margin-bottom: 12px;
+}
+
+.role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.date {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.location {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
 }
 
 /* Project List */
@@ -264,6 +288,11 @@ a:hover {
   
   .project-list .type {
     align-self: flex-start;
+  }
+
+  .role-header {
+    flex-direction: column;
+    gap: 4px;
   }
 }
 
