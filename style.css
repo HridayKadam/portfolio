@@ -169,12 +169,14 @@ section {
 
 /* Links Global */
 a {
-  color: var(--accent);
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--border);
   transition: all 0.2s;
 }
 
 a:hover {
-  opacity: 0.8;
+  text-decoration-color: var(--accent);
 }
 
 /* Mobile Optimizations */
