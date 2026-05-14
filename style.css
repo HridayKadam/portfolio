@@ -3,7 +3,7 @@
   --text: #000000;
   --muted: #555555;
   --accent: #000000;
-  --font-latex: "Computer Modern Serif", serif;
+  --font-latex: 'EB Garamond', serif;
   --font-mono: 'JetBrains Mono', monospace;
   --border: #dddddd;
 }
