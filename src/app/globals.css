@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-midnight: #0a1224;
+  --color-electric: #2f7bff;
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glass-fill: rgba(255, 255, 255, 0.08);
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.58);
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--color-midnight);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .glass-panel {
+    background: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.14) 0%,
+      rgba(255, 255, 255, 0.05) 55%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+  }
+
+  .glass-panel-dark {
+    background: linear-gradient(
+      165deg,
+      rgba(20, 32, 58, 0.72) 0%,
+      rgba(8, 14, 28, 0.85) 100%
+    );
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(48px) saturate(160%);
+    -webkit-backdrop-filter: blur(48px) saturate(160%);
+  }
+
+  .wallpaper-midnight {
+    background:
+      radial-gradient(ellipse 120% 80% at 70% 20%, rgba(47, 123, 255, 0.35), transparent 55%),
+      radial-gradient(ellipse 90% 60% at 20% 80%, rgba(90, 60, 200, 0.22), transparent 50%),
+      radial-gradient(ellipse 100% 100% at 50% 100%, rgba(5, 12, 28, 0.9), transparent 60%),
+      linear-gradient(165deg, #0d1830 0%, #050810 45%, #0a1428 100%);
+  }
+
+  .select-none-touch {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+  }
+}
