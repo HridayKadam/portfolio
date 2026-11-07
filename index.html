@@ -3,139 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f7f3" />
   <title>HRIDAY • हृदय</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;600;700&family=Outfit:wght@400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
   <meta name="description" content="Building in AEO (Agent engine optimization) and internet distribution.">
 </head>
 
 <body>
-  <div class="terminal">
-    <main>
+  <div class="paper-grain" aria-hidden="true"></div>
+  <div class="page">
+    <header class="topbar">
+      <nav class="nav" aria-label="Primary">
+        <a href="#top" class="nav-pill nav-home">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#work" class="nav-link">Builds</a>
+        <a href="#recognition" class="nav-link">Wins</a>
+      </nav>
+      <div class="top-actions">
+        <a href="https://x.com/hridaykadam" class="soc soc-x" aria-label="X" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.207-6.807-5.974 6.807H2.882l7.73-8.835L1.254 2.25h6.554l4.7 6.217 5.759-6.217zm-1.161 17.52h1.833L7.084 4.126H5.117l12.246 15.644z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/hridaykadam" class="soc soc-in" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 50 50" aria-hidden="true"><path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.53c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://github.com/hridaykadam" class="soc soc-gh" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.55-3.88-1.55-.53-1.36-1.3-1.72-1.3-1.72-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.39.97.11-.75.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.72 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.45.11-3.02 0,0 .97-.31 3.18 1.18a11.02 11.02 0 0 1 2.9-.39c.98 0 1.96.13 2.9.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.57.23 2.73.11 3.02.74.81 1.19 1.84 1.19 3.1 0 4.45-2.71 5.42-5.29 5.71.42.36.8 1.08.8 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12c0-6.35-5.15-11.5-12-11.5z"/></svg>
+        </a>
+        <a href="https://substack.com/@hridaykadam/posts" class="soc soc-sub" aria-label="Substack" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://x.com/hridaykadam" class="contact-btn" target="_blank" rel="noopener noreferrer">Say hi</a>
+      </div>
+    </header>
+
+    <main id="top">
       <section class="hero">
-        <div class="hero-top">
-          <h1 class="title">HRIDAY KADAM • हृदय</h1>
-          <nav class="social-icons" aria-label="Social links">
-            <a href="https://x.com/hridaykadam" class="social-link" aria-label="X" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.657l-5.207-6.807-5.974 6.807H2.882l7.73-8.835L1.254 2.25h6.554l4.7 6.217 5.759-6.217zm-1.161 17.52h1.833L7.084 4.126H5.117l12.246 15.644z" fill="currentColor"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/hridaykadam" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" fill="currentColor"/></svg>
-            </a>
-            <a href="https://github.com/hridaykadam" class="social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.55-3.88-1.55-.53-1.36-1.3-1.72-1.3-1.72-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.39.97.11-.75.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.72 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.45.11-3.02 0,0 .97-.31 3.18 1.18a11.02 11.02 0 0 1 2.9-.39c.98 0 1.96.13 2.9.39 2.21-1.49 3.18-1.18 3.18-1.18.63 1.57.23 2.73.11 3.02.74.81 1.19 1.84 1.19 3.1 0 4.45-2.71 5.42-5.29 5.71.42.36.8 1.08.8 2.18 0 1.57-.01 2.84-.01 3.23 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12c0-6.35-5.15-11.5-12-11.5z"/></svg>
-            </a>
-            <a href="https://substack.com/@hridaykadam/posts" class="social-link" aria-label="Substack" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" height="18" width="18"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor" /></svg>
-            </a>
-          </nav>
+        <div class="hero-stage">
+          <span class="chip chip-mint chip-tl">building in AEO</span>
+          <span class="chip chip-cream chip-tr">YA100 fellow</span>
+          <p class="scribble hero-caption">my name is</p>
+          <div class="name-plate">
+            <svg class="scribble-rect" viewBox="0 0 200 58" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M7 9 C 4 3, 22 4, 48 5 S 110 2, 152 6 S 192 5, 195 13 S 199 30, 196 44 S 178 55, 118 54 S 42 56, 12 51 S 2 28, 7 9 Z" fill="none" stroke="#e45c2b" stroke-width="2.2" stroke-linejoin="round"/>
+            </svg>
+            <h1 class="title">HRIDAY</h1>
+          </div>
+          <span class="chip chip-yellow chip-bl">Mumbai</span>
+          <p class="scribble surname">Kadam · <span class="devanagari">हृदय</span></p>
+          <span class="chip chip-mint chip-br">Hack Club</span>
         </div>
-        <p class="subtitle">Building in AEO (Agent engine optimization) and internet distribution.</p>
+
+        <p class="status-line"><span class="dot"></span> Collaborated with 4 YC-backed startups</p>
+
+        <h2 class="lede">Building in AEO (Agent engine optimization) and internet distribution.</h2>
+
+        <a class="cta" href="https://x.com/hridaykadam" target="_blank" rel="noopener noreferrer">
+          <span class="cta-mark"></span>
+          Say hi on X
+        </a>
       </section>
 
-      <section class="content-block">
-        <h2 class="section-label">GROWTH & DISTRIBUTION</h2>
-        <div class="prose">
-          <p>Building in <strong>AEO</strong> • Collaborated with <strong>4 YC-backed startups</strong> 
-        </div>
-      </section>
+      <div class="page-break" aria-hidden="true"></div>
 
-      <section class="content-block">
-        <h2 class="section-label">HACKER HOUSES & COMMUNITY</h2>
-        <div class="role-header">
-          <strong><a href="https://hackclub.com" target="_blank" rel="noopener noreferrer">Hack Club</a> — Chapter Lead (Mumbai)</strong>
+      <section class="about" id="about">
+        <p class="scribble about-label">about me</p>
+        <div class="about-grid">
+          <article class="polaroid rot-left" data-paper data-rot="-4">
+            <span class="tape tape-mint"></span>
+            <div class="polaroid-face face-yc">
+              <p class="polaroid-kicker">growth</p>
+              <p class="polaroid-stat">4</p>
+              <p class="polaroid-sub">YC-backed startups</p>
+            </div>
+            <p class="polaroid-caption">collaborated with</p>
+          </article>
+
+          <div class="about-copy">
+            <p class="hand">Building in <strong>AEO</strong>. Collaborated with <strong>4 YC-backed startups</strong>.</p>
+            <p class="hand">Traveling, meeting new people, and understanding how people think.</p>
+            <p class="hand">Mostly active on X.</p>
+          </div>
+
+          <article class="polaroid rot-right" data-paper data-rot="3.5">
+            <span class="tape tape-yellow"></span>
+            <div class="polaroid-face face-builds">
+              <p class="polaroid-kicker">hacks / builds</p>
+              <p class="polaroid-stat">8+</p>
+              <p class="polaroid-sub">products shipped</p>
+            </div>
+            <p class="polaroid-caption">app store · chrome · cli</p>
+          </article>
         </div>
-        <ul class="bullet-list">
-          <li>Led Mumbai chapter of global coding community (HQ: Vermont, USA)</li>
-          <li>Organized hackathons across cities, including <strong>Campfire Ahmedabad</strong> ($600 raised)</li>
-          <li>Raised <strong>$1,000+ total sponsorships</strong>; managed <strong>$3,000+ total budget</strong></li>
-          <li>Mentored builders and supported app development through grants</li>
+
+        <ul class="sticker-row" aria-label="Focus">
+          <li class="sticker sticker-yellow">AEO <span class="sticker-icon">⌁</span></li>
+          <li class="sticker sticker-mint">Distribution-first systems</li>
+          <li class="sticker sticker-pink">Attention &amp; conversion</li>
+          <li class="sticker sticker-blue">Fast execution</li>
         </ul>
       </section>
 
-      <section class="content-block">
-        <h2 class="section-label">FELLOWSHIPS</h2>
-        <div class="role-header">
-          <strong><a href="https://www.theresidency.io" target="_blank" rel="noopener noreferrer">The Residency</a> — Delta II Fellow</strong>
-        </div>
-        <div class="role-header" style="margin-top: 12px;">
-          <strong><a href="https://youngasians.org" target="_blank" rel="noopener noreferrer">Young Asians</a> — YA100 Fellow</strong>
-        </div>
-        <div class="role-header" style="margin-top: 12px;">
-          <strong><a href="https://f.inc" target="_blank" rel="noopener noreferrer">Founders, Inc.</a></strong>
-        </div>
-        <div class="role-header" style="margin-top: 12px;">
-          <strong>HPAIR 2026 — Delegate (Accepted)</strong>
+      <section class="block" id="community">
+        <h2 class="boxed-title">community</h2>
+        <div class="entry">
+          <p class="role"><a href="https://hackclub.com" target="_blank" rel="noopener noreferrer">Hack Club</a> — Chapter Lead (Mumbai)</p>
+          <ul class="notes">
+            <li>Led Mumbai chapter of global coding community (HQ: Vermont, USA)</li>
+            <li>Organized hackathons across cities, including <strong>Campfire Ahmedabad</strong> ($600 raised)</li>
+            <li>Raised <strong>$1,000+ total sponsorships</strong>; managed <strong>$3,000+ total budget</strong></li>
+            <li>Mentored builders and supported app development through grants</li>
+          </ul>
         </div>
       </section>
 
-      <section class="content-block">
-        <h2 class="section-label">VENTURE & OPERATOR EXPERIENCE</h2>
-        <div class="role-header">
-          <strong>Founder's Office — <a href="https://polarcut.io" target="_blank" rel="noopener noreferrer">Polarcut</a></strong>
-        </div>
-        <p class="prose">Worked directly with founders on product, operations, and growth.</p>
-        <div class="role-header" style="margin-top: 12px;">
-          <strong>Startup Internships (UX/UI & SDE)</strong>
-        </div>
-        <p class="prose">Interned at 2 startups; shipped consumer products and learned real-world lessons on payments and contracts.</p>
-        <div class="role-header" style="margin-top: 12px;">
-          <strong><a href="https://www.mumbaifilmfestival.ai/" target="_blank" rel="noopener noreferrer">Indian AI Film Festival 2026</a> — On-ground Ops & Management</strong>
-        </div>
-        <p class="prose">Volunteered at Qutb Minar, New Delhi; handled on-ground operations and event management.</p>
+      <section class="block" id="fellowships">
+        <h2 class="boxed-title">fellowships</h2>
+        <ul class="sticker-row fellow-row">
+          <li>
+            <a class="sticker sticker-cream" href="https://www.theresidency.io" target="_blank" rel="noopener noreferrer">The Residency — Delta II Fellow</a>
+          </li>
+          <li>
+            <a class="sticker sticker-yellow" href="https://youngasians.org" target="_blank" rel="noopener noreferrer">Young Asians — YA100 Fellow</a>
+          </li>
+          <li>
+            <a class="sticker sticker-mint" href="https://f.inc" target="_blank" rel="noopener noreferrer">Founders, Inc.</a>
+          </li>
+          <li>
+            <span class="sticker sticker-pink">HPAIR 2026 — Delegate (Accepted)</span>
+          </li>
+        </ul>
       </section>
 
-      <section class="content-block">
-        <h2 class="section-label">HACKS / BUILDS</h2>
-        <div class="prose">
-          <p>Built <strong>8+ products</strong> across App Store, Chrome, and CLI</p>
-          <ul class="bullet-list">
+      <section class="block" id="venture">
+        <h2 class="boxed-title">operator work</h2>
+        <div class="entry">
+          <p class="role">Founder's Office — <a href="https://polarcut.io" target="_blank" rel="noopener noreferrer">Polarcut</a></p>
+          <p class="blurb">Worked directly with founders on product, operations, and growth.</p>
+        </div>
+        <div class="entry">
+          <p class="role">Startup Internships (UX/UI &amp; SDE)</p>
+          <p class="blurb">Interned at 2 startups; shipped consumer products and learned real-world lessons on payments and contracts.</p>
+        </div>
+        <div class="entry">
+          <p class="role"><a href="https://www.mumbaifilmfestival.ai/" target="_blank" rel="noopener noreferrer">Indian AI Film Festival 2026</a> — On-ground Ops &amp; Management</p>
+          <p class="blurb">Volunteered at Qutb Minar, New Delhi; handled on-ground operations and event management.</p>
+        </div>
+      </section>
+
+      <section class="block" id="work">
+        <h2 class="boxed-title">hacks / builds</h2>
+        <div class="entry">
+          <p class="blurb">Built <strong>8+ products</strong> across App Store, Chrome, and CLI.</p>
+          <ul class="notes">
             <li>Consumer apps (App Store)</li>
             <li>Chrome extensions (productivity tools)</li>
-            <li>CLI tools & AI experiments</li>
+            <li>CLI tools &amp; AI experiments</li>
           </ul>
-          <p>Rapid execution cycles (idea → shipped in days)</p>
+          <p class="blurb">Rapid execution cycles (idea → shipped in days)</p>
         </div>
       </section>
 
-      <section class="content-block">
-        <h2 class="section-label">RECOGNITION</h2>
-        <div class="prose">
-          <p><strong><a href="https://basement.redbull.com" target="_blank" rel="noopener noreferrer">Red Bull Basement 2026</a> — National Finalist</strong></p>
-          <p>Top <strong>6 / 23,000+ teams</strong></p>
-          <p>Pitched AEO-based product idea. Recognized for innovation in next-gen search systems.</p>
-          <p style="margin-top: 12px;"><strong>IIT Delhi / YC — Product Pitch</strong></p>
-          <p>Pitched product and received direct feedback from <strong>YC partners</strong>.</p>
+      <section class="block" id="recognition">
+        <h2 class="boxed-title">wins</h2>
+        <div class="win-grid">
+          <article class="polaroid rot-left win-card" data-paper data-rot="-2">
+            <span class="tape tape-pink"></span>
+            <div class="polaroid-face face-redbull">
+              <p class="polaroid-kicker">Red Bull Basement 2026</p>
+              <p class="polaroid-stat win-stat">6 / 23k+</p>
+              <p class="polaroid-sub">National Finalist</p>
+            </div>
+            <p class="polaroid-caption">top 6 / 23,000+ teams</p>
+          </article>
+          <div class="entry win-copy">
+            <p class="role"><a href="https://basement.redbull.com" target="_blank" rel="noopener noreferrer">Red Bull Basement 2026</a> — National Finalist</p>
+            <p class="blurb">Top <strong>6 / 23,000+ teams</strong>. Pitched AEO-based product idea. Recognized for innovation in next-gen search systems.</p>
+            <p class="role">IIT Delhi / YC — Product Pitch</p>
+            <p class="blurb">Pitched product and received direct feedback from <strong>YC partners</strong>.</p>
+          </div>
         </div>
       </section>
-
-      <section class="content-block">
-        <h2 class="section-label">FOCUS</h2>
-        <ul class="bullet-list">
-          <li>AEO (Agent engine optimization)</li>
-          <li>Distribution-first systems</li>
-          <li>Attention & conversion</li>
-          <li>Fast execution</li>
-        </ul>
-      </section>
-
-      <section class="content-block personal-touch">
-        <h2 class="section-label">PERSONAL</h2>
-        <div class="prose">
-          <p>Traveling, meeting new people, and understanding how people think</p>
-          <p>Mostly active on X</p>
-        </div>
-      </section>
-
-      <footer class="socials-footer">
-        <p class="copyright">SHIP() OR DIE. 2026</p>
-      </footer>
     </main>
+
+    <footer class="footer">
+      <p class="scribble footer-note">ship() or die.</p>
+      <p class="copyright">2026</p>
+    </footer>
   </div>
+  <script src="notebook.js"></script>
 </body>
 </html>
