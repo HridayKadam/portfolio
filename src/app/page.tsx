@@ -1,5 +1,5 @@
-import { DeviceShell } from "@/components/DeviceShell";
+import { ExperienceGate } from "@/components/ExperienceGate";
 
 export default function Home() {
-  return <DeviceShell />;
+  return <ExperienceGate />;
 }
