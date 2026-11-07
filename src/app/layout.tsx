@@ -2,23 +2,21 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "HridayOS",
-  description: "Device-adaptive portfolio operating system shell",
+  title: "hriday kadam, entrepreneur, builder & operator",
+  description:
+    "Hriday Kadam is an entrepreneur, builder and operator. Ventures, products, growth, and experiments.",
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  viewportFit: "cover",
-  themeColor: "#0a1224",
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">{children}</body>
+      <body className="plain-body antialiased">{children}</body>
     </html>
   );
 }
