@@ -4,23 +4,24 @@ import { motion } from "framer-motion";
 
 type Props = {
   subtitle?: string;
+  expanded?: boolean;
 };
 
-export function DynamicIsland({ subtitle = "HridayOS" }: Props) {
+export function DynamicIsland({ subtitle = "HridayOS", expanded = false }: Props) {
   return (
     <motion.div
       layout
-      className="absolute left-1/2 top-3 z-[90] -translate-x-1/2"
-      initial={false}
+      className="absolute left-1/2 z-[96] -translate-x-1/2"
+      style={{ top: "max(11px, env(safe-area-inset-top))" }}
+      animate={{ width: expanded ? 220 : 126, height: expanded ? 44 : 34 }}
+      transition={{ type: "spring", stiffness: 500, damping: 38 }}
     >
-      <motion.div
-        layout
-        className="glass-panel-dark flex min-w-[120px] items-center justify-center gap-2 rounded-full px-4 py-2 shadow-island"
-        animate={{ scale: subtitle.length > 12 ? 1.05 : 1 }}
-      >
-        <span className="h-2 w-2 rounded-full bg-electric shadow-[0_0_8px_rgba(47,123,255,0.8)]" />
-        <span className="truncate text-[11px] font-medium text-white/80">{subtitle}</span>
-      </motion.div>
+      <div className="flex h-full w-full items-center justify-center gap-2 rounded-full bg-black px-3 shadow-lg shadow-black/50">
+        <span className="h-2 w-2 rounded-full bg-[#30D158]" />
+        {expanded && (
+          <span className="truncate text-[13px] font-medium text-white/90">{subtitle}</span>
+        )}
+      </div>
     </motion.div>
   );
 }

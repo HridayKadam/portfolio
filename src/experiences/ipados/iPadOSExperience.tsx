@@ -61,7 +61,7 @@ export function IPadOSExperience() {
   return (
     <div className="relative h-[100dvh] w-full overflow-hidden">
       <Wallpaper />
-      <IOSStatusBar variant="solid" />
+      <IOSStatusBar light />
 
       <AnimatePresence>
         {showHome && (
@@ -170,7 +170,7 @@ export function IPadOSExperience() {
                   </button>
                 </div>
                 <div className="scrollbar-thin h-[calc(100%-40px)] overflow-auto p-3">
-                  <AppContent appId={split.floating} />
+                  <AppContent appId={split.floating} variant="ipad" />
                 </div>
               </motion.div>
             )}
@@ -209,7 +209,7 @@ function IPadAppPanel({
         </aside>
       )}
       <div className="scrollbar-thin min-h-0 flex-1 overflow-auto p-4">
-        <AppContent appId={appId} />
+        <AppContent appId={appId} variant="ipad" />
       </div>
     </div>
   );

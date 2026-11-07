@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { appCatalog, allAppIds, projectsPlaceholder, type AppId } from "@/config/placeholders";
+import { products } from "@/config/content";
+import { appCatalog, allAppIds, type AppId } from "@/config/placeholders";
 import { useMacWindows } from "@/experiences/macos/WindowContext";
 
 type Props = {
@@ -38,9 +39,9 @@ export function Spotlight({ open, onClose }: Props) {
     const apps = allAppIds
       .filter((id) => appCatalog[id].name.toLowerCase().includes(q))
       .map((id) => ({ type: "app" as const, id, label: appCatalog[id].name }));
-    const projects = projectsPlaceholder.items
-      .filter((p) => p.title.toLowerCase().includes(q))
-      .map((p) => ({ type: "project" as const, id: p.id, label: p.title }));
+    const projects = products
+      .filter((p) => p.name.toLowerCase().includes(q))
+      .map((p) => ({ type: "project" as const, id: p.id, label: p.name }));
     return [...apps, ...projects];
   }, [query]);
 
