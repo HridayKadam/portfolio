@@ -3,42 +3,50 @@
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { AppId } from "@/config/placeholders";
+import { iosHomeAppIds, appCatalog } from "@/config/placeholders";
 import { AppContent } from "@/apps/AppContent";
 import { AppIcon } from "@/components/AppIcon";
-import { Wallpaper } from "@/components/Wallpaper";
-import { allAppIds } from "@/config/placeholders";
 import { DynamicIsland } from "@/experiences/ios/DynamicIsland";
 import { IOSDock } from "@/experiences/ios/IOSDock";
+import { IOSHomeBar } from "@/experiences/ios/IOSHomeBar";
 import { IOSLockScreen } from "@/experiences/ios/IOSLockScreen";
+import { IOSPhoneFrame } from "@/experiences/ios/IOSPhoneFrame";
 import { IOSStatusBar } from "@/experiences/ios/IOSStatusBar";
+import { IOSWallpaper } from "@/experiences/ios/IOSWallpaper";
+import { readDeviceSignals } from "@/lib/detectDevice";
 
 export function IOSExperience() {
   const [unlocked, setUnlocked] = useState(false);
   const [activeApp, setActiveApp] = useState<AppId | null>(null);
-  const [islandText, setIslandText] = useState("HridayOS");
-
-  const launchApp = useCallback((appId: AppId) => {
-    setActiveApp(appId);
-    setIslandText(`Opening ${appId}`);
-    window.setTimeout(() => setIslandText("HridayOS"), 1600);
-  }, []);
-
-  const closeApp = useCallback(() => {
-    setActiveApp(null);
-    setIslandText("HridayOS");
-  }, []);
+  const [islandExpanded, setIslandExpanded] = useState(false);
+  const [useFrame, setUseFrame] = useState(false);
 
   useEffect(() => {
-    if (unlocked) return;
-    const t = setTimeout(() => setIslandText("Swipe up to unlock"), 2200);
-    return () => clearTimeout(t);
-  }, [unlocked]);
+    const s = readDeviceSignals();
+    setUseFrame(!/iPhone|iPod|Android.*Mobile/i.test(s.ua) && s.width > 480);
+  }, []);
 
-  return (
-    <div className="relative h-[100dvh] w-full overflow-hidden bg-black">
-      <Wallpaper />
-      <IOSStatusBar variant="overlay" />
-      <DynamicIsland subtitle={islandText} />
+  const launchApp = useCallback((appId: AppId) => {
+    setIslandExpanded(true);
+    window.setTimeout(() => {
+      setActiveApp(appId);
+      setIslandExpanded(false);
+    }, 380);
+  }, []);
+
+  const goHome = useCallback(() => {
+    setActiveApp(null);
+    setIslandExpanded(false);
+  }, []);
+
+  const shell = (
+    <div className="relative h-full w-full overflow-hidden bg-black select-none-touch">
+      <IOSWallpaper dimmed={unlocked && !activeApp} />
+      {!activeApp && <IOSStatusBar light />}
+      <DynamicIsland
+        subtitle={activeApp ? appCatalog[activeApp].name : "Hriday Kadam"}
+        expanded={islandExpanded || !!activeApp}
+      />
 
       <AnimatePresence mode="wait">
         {!unlocked ? (
@@ -46,75 +54,61 @@ export function IOSExperience() {
         ) : activeApp ? (
           <motion.div
             key={activeApp}
-            className="absolute inset-0 z-30 flex flex-col bg-midnight-900/95 pt-12"
-            initial={{ opacity: 0, scale: 1.05, y: 24 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.98, y: 12 }}
-            transition={{ type: "spring", stiffness: 380, damping: 34 }}
+            className="absolute inset-0 z-30 flex flex-col bg-white"
+            initial={{ opacity: 0, scale: 0.88, borderRadius: 32 }}
+            animate={{ opacity: 1, scale: 1, borderRadius: 0 }}
+            exit={{ opacity: 0, scale: 0.92, borderRadius: 28 }}
+            transition={{ type: "spring", stiffness: 420, damping: 36 }}
+            style={{ paddingTop: "env(safe-area-inset-top)" }}
           >
-            <header className="flex items-center border-b border-white/10 px-4 pb-3">
-              <button
-                type="button"
-                onClick={closeApp}
-                className="text-sm font-medium text-electric-glow"
-              >
-                ← Home
-              </button>
-              <h1 className="flex-1 text-center text-sm font-semibold capitalize text-white/90">
-                {activeApp}
-              </h1>
-              <span className="w-12" />
-            </header>
-            <div
-              className="scrollbar-thin flex-1 overflow-auto p-4"
-              onTouchStart={(e) => {
-                const touch = e.touches[0];
-                (e.currentTarget as HTMLElement).dataset.touchStartX = String(touch.clientX);
-              }}
-              onTouchEnd={(e) => {
-                const startX = Number(
-                  (e.currentTarget as HTMLElement).dataset.touchStartX ?? 0,
-                );
-                const endX = e.changedTouches[0]?.clientX ?? 0;
-                if (endX - startX > 80 && startX < 28) closeApp();
-              }}
-            >
-              <AppContent appId={activeApp} />
+            <IOSStatusBar light={false} />
+            <div className="flex-1 overflow-hidden pt-10">
+              <AppContent appId={activeApp} variant="ios" />
             </div>
-            <div className="h-6 w-32 self-center rounded-full bg-white/30" aria-hidden />
+            <IOSHomeBar onHome={goHome} />
           </motion.div>
         ) : (
           <motion.div
             key="home"
-            className="absolute inset-0 z-20 flex flex-col pt-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            className="absolute inset-0 z-20 flex flex-col"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
           >
-            <div className="flex-1 overflow-auto px-5 pb-28 pt-4">
-              <div className="grid grid-cols-4 gap-x-3 gap-y-6">
-                {allAppIds.map((appId) => (
+            <div
+              className="flex-1 overflow-auto px-[22px] pt-[72px] pb-32"
+              style={{ WebkitOverflowScrolling: "touch" }}
+            >
+              <div className="grid grid-cols-4 gap-x-2 gap-y-5">
+                {iosHomeAppIds.map((appId) => (
                   <AppIcon
                     key={appId}
                     appId={appId}
-                    size="xl"
+                    size="ios"
                     showLabel
                     labelSize="ios"
+                    platform="ios"
                     onClick={() => launchApp(appId)}
                   />
                 ))}
               </div>
             </div>
+            <div className="pointer-events-none absolute bottom-[100px] left-0 right-0 flex justify-center">
+              <div className="pointer-events-auto flex items-center gap-2 rounded-full bg-white/18 px-4 py-2 backdrop-blur-xl">
+                <span className="text-white/80">⌕</span>
+                <span className="text-[17px] text-white/70">Search</span>
+              </div>
+            </div>
             <IOSDock onLaunch={launchApp} />
-            <button
-              type="button"
-              onClick={() => setUnlocked(false)}
-              className="absolute bottom-1 left-1/2 z-40 -translate-x-1/2 rounded-full px-3 py-1 text-[10px] text-white/40"
-            >
-              Lock (demo)
-            </button>
           </motion.div>
         )}
       </AnimatePresence>
     </div>
   );
+
+  if (useFrame) {
+    return <IOSPhoneFrame>{shell}</IOSPhoneFrame>;
+  }
+
+  return <div className="h-[100dvh] w-full">{shell}</div>;
 }

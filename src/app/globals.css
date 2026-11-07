@@ -9,6 +9,10 @@
   --glass-fill: rgba(255, 255, 255, 0.08);
   --text-primary: rgba(255, 255, 255, 0.92);
   --text-secondary: rgba(255, 255, 255, 0.58);
+  --ios-bg: #f2f2f7;
+  --ios-label: #000000;
+  --ios-secondary: rgba(60, 60, 67, 0.6);
+  --ios-chevron: rgba(60, 60, 67, 0.3);
 }
 
 html,
@@ -76,5 +80,37 @@ body {
   .scrollbar-thin::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.18);
     border-radius: 999px;
+  }
+
+  .bg-ios-bg {
+    background-color: var(--ios-bg);
+  }
+
+  .text-ios-label {
+    color: var(--ios-label);
+  }
+
+  .text-ios-secondary {
+    color: var(--ios-secondary);
+  }
+
+  .text-ios-chevron {
+    color: var(--ios-chevron);
+  }
+
+  .ios-icon-mask {
+    border-radius: 22.5%;
+  }
+
+  .ios-wallpaper {
+    background:
+      radial-gradient(ellipse 90% 70% at 30% 15%, rgba(120, 80, 220, 0.85), transparent 55%),
+      radial-gradient(ellipse 80% 60% at 85% 25%, rgba(47, 123, 255, 0.75), transparent 50%),
+      radial-gradient(ellipse 100% 80% at 50% 100%, rgba(20, 30, 80, 0.95), transparent 50%),
+      linear-gradient(160deg, #1a1038 0%, #0d2848 40%, #051020 100%);
+  }
+
+  .ios-home-blur {
+    backdrop-filter: blur(0px);
   }
 }

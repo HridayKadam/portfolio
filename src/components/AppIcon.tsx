@@ -6,19 +6,21 @@ import { motion } from "framer-motion";
 
 type Props = {
   appId: AppId;
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "sm" | "md" | "lg" | "xl" | "ios";
   showLabel?: boolean;
   labelSize?: "mac" | "ios" | "ipad";
+  platform?: "mac" | "ios" | "ipad";
   onClick?: () => void;
   onContextMenu?: (e: MouseEvent) => void;
   className?: string;
 };
 
 const sizes = {
-  sm: { box: "h-10 w-10 text-sm", radius: "rounded-[10px]", label: "text-[10px]" },
-  md: { box: "h-12 w-12 text-base", radius: "rounded-[12px]", label: "text-[11px]" },
-  lg: { box: "h-14 w-14 text-lg", radius: "rounded-[14px]", label: "text-xs" },
-  xl: { box: "h-[60px] w-[60px] text-xl", radius: "rounded-[15px]", label: "text-xs" },
+  sm: { box: "h-10 w-10 text-[11px]", label: "text-[10px]", gap: "gap-1" },
+  md: { box: "h-12 w-12 text-[13px]", label: "text-[11px]", gap: "gap-1" },
+  lg: { box: "h-14 w-14 text-[15px]", label: "text-xs", gap: "gap-1.5" },
+  xl: { box: "h-[60px] w-[60px] text-[17px]", label: "text-[11px]", gap: "gap-1.5" },
+  ios: { box: "h-[60px] w-[60px] text-[15px]", label: "text-[11px]", gap: "gap-1" },
 };
 
 export function AppIcon({
@@ -26,12 +28,14 @@ export function AppIcon({
   size = "md",
   showLabel = false,
   labelSize = "mac",
+  platform = "mac",
   onClick,
   onContextMenu,
   className = "",
 }: Props) {
   const app = appCatalog[appId];
   const s = sizes[size];
+  const isIOS = platform === "ios" || platform === "ipad";
 
   const Wrapper = onClick ? motion.button : motion.div;
 
@@ -40,27 +44,35 @@ export function AppIcon({
       type={onClick ? "button" : undefined}
       onClick={onClick}
       onContextMenu={onContextMenu}
-      whileTap={onClick ? { scale: 0.92 } : undefined}
-      whileHover={onClick ? { scale: 1.04 } : undefined}
-      className={`group flex flex-col items-center gap-1.5 border-0 bg-transparent p-0 ${className}`}
+      whileTap={onClick ? { scale: 0.9 } : undefined}
+      transition={{ type: "spring", stiffness: 520, damping: 26 }}
+      className={`group flex flex-col items-center ${s.gap} border-0 bg-transparent p-0 ${className}`}
       aria-label={app.name}
     >
       <div
-        className={`${s.box} ${s.radius} relative flex items-center justify-center font-semibold text-white shadow-lg`}
+        className={`${s.box} ios-icon-mask relative flex items-center justify-center font-semibold text-white`}
         style={{
-          background: `linear-gradient(145deg, ${app.color} 0%, #1a2840 140%)`,
-          boxShadow: "0 8px 20px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.25)",
+          background: isIOS
+            ? `linear-gradient(180deg, ${app.color} 0%, ${app.colorEnd} 100%)`
+            : `linear-gradient(145deg, ${app.color} 0%, ${app.colorEnd} 100%)`,
+          boxShadow: isIOS
+            ? "0 2px 8px rgba(0,0,0,0.28)"
+            : "0 8px 20px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.25)",
         }}
       >
-        <span aria-hidden>{app.symbol}</span>
+        <span className="drop-shadow-sm" aria-hidden>
+          {app.symbol}
+        </span>
       </div>
       {showLabel && (
         <span
-          className={`${s.label} max-w-[72px] truncate text-center font-medium text-white/90 ${
-            labelSize === "ios" ? "drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" : ""
+          className={`${s.label} max-w-[76px] truncate text-center font-medium leading-tight ${
+            labelSize === "ios"
+              ? "text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]"
+              : "text-white/90"
           }`}
         >
-          {app.shortName}
+          {app.iosLabel && isIOS ? app.iosLabel : app.shortName}
         </span>
       )}
     </Wrapper>
