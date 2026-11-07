@@ -1,13 +1,10 @@
-# portfolio
-
 # Hriday Kadam
 
 Personal website.
 
-Simple, content-first, paper-style layout inspired by academic portfolios.
+Notebook-paper layout: lined sheet, handwritten notes, taped polaroids, sticker tags.
 
-Built with plain HTML and CSS.  
+Built with plain HTML, CSS, and a little pointer tilt on the cards.
 No frameworks.
 
-Last updated Jan 2025.
-
+Last updated Nov 2026.
